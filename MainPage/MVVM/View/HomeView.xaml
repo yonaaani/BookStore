@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="MainPage.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MainPage.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="360" d:DesignWidth="550">
+    <StackPanel>
+        <StackPanel Height="50">
+        <TextBlock Text="Novel"
+                   Foreground="#333333"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="65,15,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Self-love"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="100,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Science"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="150,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Romance"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="195,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Crime"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="245,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Education"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="280,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Psycology"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="335,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Economy"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="390,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        <TextBlock Text="Drama"
+                   Foreground="#696969"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   Margin="440,-12,0,0"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="25,0,35,0">
+
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="20,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+        </StackPanel>
+        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Height="25">
+            <TextBlock Text="Foreign books"
+                   Foreground="#19191B"
+                   FontSize="18"
+                   HorizontalAlignment="Left"
+                   Margin="65,0,0,0"
+                   FontWeight="SemiBold"
+                   FontFamily="/Fonts/#Hubballi"
+                   />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="25,10,35,0">
+
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="20,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+            <Border Width="100"
+                    Height="160"
+                    Background="Aqua"
+                    CornerRadius="15"/>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

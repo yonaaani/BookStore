@@ -1,0 +1,72 @@
+﻿<Window x:Class="BookStore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookStore"
+        mc:Ignorable="d"
+        Title="" Height="500" Width="800" AllowsTransparency="True" WindowStyle="None">
+
+    <Border Background="White"
+                CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="397*"/>
+                <ColumnDefinition x:Name="center" Width="397*"/>
+                <ColumnDefinition Width="397*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" HorizontalAlignment="Center" Height="161" Margin="0,68,0,0" VerticalAlignment="Top" Width="144" Source="/Book logo.png">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="/Book logo.png" Stretch="Uniform" TileMode="None"/>
+                </Image.OpacityMask>
+            </Image>
+            <StackPanel Grid.Column="1">
+                <Border BorderBrush="#BF8E8E93" BorderThickness="1" Height="30" Width="170" Margin="0,240,0,0" CornerRadius="4,4,4,4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="textUsername" MouseDown="textUsername_MouseDown" Text ="Username" Grid.Column="1" FontFamily="Segoe UI" Margin="0,1,0,0" Foreground="#7F3C3C43" Height="16" FontSize="11"/>
+                        <TextBox x:Name="txtUsername" TextChanged="txtUsername_TextChanged" Margin="17,6,0,6" Background="Transparent" BorderBrush="#00ABADB3" Grid.ColumnSpan="2" SelectionBrush="Transparent" FontFamily="Segoe UI" FontSize="11" Foreground="#7F3C3C43"/>
+
+                        <Image Grid.Column="2" Source="/cancelll.png" Width="10">
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="/cancelll.png" Stretch="Uniform" TileMode="None"/>
+                            </Image.OpacityMask>
+                        </Image>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="#BF8E8E93" BorderThickness="1" Height="30" Width="170" Margin="0,10,0,0" CornerRadius="4,4,4,4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown" Text="Password" Grid.Column="1" FontFamily="Segoe UI" Margin="0,1,0,0" Foreground="#7F3C3C43" Height="16" FontSize="11"/>
+                        <PasswordBox x:Name="txtPassword" PasswordChanged="txtParrword_TextChanged" Margin="17,6,0,6" Background="Transparent" BorderBrush="#00ABADB3" Grid.ColumnSpan="2" SelectionBrush="#000078D7" FontFamily="Segoe UI" FontSize="11" Foreground="#7F3C3C43"/>
+
+                        <Image Grid.Column="2" Source="/eye.png" Width="11">
+                            <Image.OpacityMask>
+                                <ImageBrush ImageSource="/eye.png" Stretch="Uniform" TileMode="None"/>
+                            </Image.OpacityMask>
+                        </Image>
+                    </Grid>
+                </Border>
+                <Border MouseDown="Border_MouseDown" Height="30" Width="170" Margin="0,10,0,0" CornerRadius="4,4,4,4">
+                    <Button  Content="Log In" Click="Button_Click" Width="170" Height="30" Background="#FF3EB489" BorderBrush="White" FontFamily="Segoe UI" FontWeight="Normal" Foreground="White"  />
+                </Border>
+
+                <TextBlock Foreground="#FF8E8E93" Margin="68,10,0,0" FontSize="7">Don't have an account yet?</TextBlock>
+                <TextBlock Foreground="#FF8E8E93" Margin="153,-9,0,0" FontSize="7" FontStretch="Medium" FontWeight="Bold">Sign up here</TextBlock>
+
+            </StackPanel>
+
+
+        </Grid>
+    </Border>
+</Window>
