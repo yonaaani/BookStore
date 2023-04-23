@@ -8,7 +8,7 @@ namespace MyBookListBLL.DTO
 {
     public class BookListDTO
     {
-        public int IDbook { get; set; }
+        public int Id { get; set; }
         public string BookName { get; set; }
         public string BookType { get; set; }
         public string Overview { get; set; }

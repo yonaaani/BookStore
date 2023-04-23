@@ -102,6 +102,22 @@ namespace MyEventsAdoNetDB.Repositories
             return updateQuery.ToString();
         }
 
+        public async Task<int> UpdateAsync(T entity)
+        {
+            string updateQuery = GenerateUpdateQuery();
+            return await _sqlConnection.ExecuteAsync(updateQuery, entity, _dbTransaction);
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _dbTransaction.Connection.ExecuteAsync(
+                "COMMIT TRANSACTION",
+                transaction: _dbTransaction);
+        }
+
+
+
+
         // генерация Isert выражения
         private string GenerateInsertQuery()
         {

@@ -40,5 +40,6 @@ namespace MyEventsAdoNetDB.Repositories
             _dbTransaction.Connection?.Dispose();
             _dbTransaction.Dispose();
         }
+
     }
 }

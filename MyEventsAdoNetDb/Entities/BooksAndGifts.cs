@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper_Example.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,8 @@ namespace MyEventsAdoNetDb.Entities
     {
         public int ?IDGift { get; set; }
         public int ?IDBook { get; set; }
+
+        public Gifts Gifts { get; set; }
+        public BookList BookList { get; set; }
     }
 }

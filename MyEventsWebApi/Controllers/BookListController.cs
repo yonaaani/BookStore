@@ -2,6 +2,8 @@ using Dapper_Example.DAL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyEventsAdoNetDb.Entities;
+using MyEventsAdoNetDb.Repositories.Contracts;
+using MyEventsAdoNetDB.Repositories;
 using MyEventsAdoNetDB.Repositories.Contracts;
 //using MyEventsEntityFrameworkDb.EFRepositories.Contracts;
 
@@ -156,7 +158,77 @@ namespace MyEventsWebApi.Controllers
             }
         }
 
+        // GET: api/BookList?bookName={bookName}
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<BookList>>> GetByBookNameAsync(string bookName)
+        {
+            try
+            {
+                var result = await _ADOuow._booklistRepository.GetAllAsync();
+                var filteredResult = result.Where(x => x.BookName.ToLower().Contains(bookName.ToLower()));
+                _ADOuow.Commit();
+                if (!filteredResult.Any())
+                {
+                    _logger.LogInformation($"Івент із BookName пошуком за назвою пройшов успішно! ");
+                    return NotFound();
+                }
+                return Ok(filteredResult);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Транзакція сфейлилась! Щось пішло не так у методі GetByBookNameAsync() - {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "вот так вот!");
+            }
+        }
 
-        
+        // GET: api/BookList/Author/{authorName}
+        [HttpGet("Author/{authorName}")]
+        public async Task<ActionResult<IEnumerable<BookList>>> GetByAuthorAsync(string authorName)
+        {
+            try
+            {
+                var result = await _ADOuow._booklistRepository.GetByAuthorAsync(authorName);
+                _ADOuow.Commit();
+
+                if (result == null || result.Count() == 0)
+                {
+                    _logger.LogInformation($"Книги автора {authorName} не знайдено в базі даних");
+                    return NotFound();
+                }
+                else
+                {
+                    _logger.LogInformation($"Отримали список книг автора {authorName} з бази даних!");
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Транзакція сфейлилась! Щось пішло не так у методі GetByAuthorAsync() - {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "вот так вот!");
+            }
+        }
+
+        // GET: api/BookList/genre/{genre}
+        [HttpGet("genre/{genre}")]
+        public async Task<ActionResult<IEnumerable<BookList>>> GetByGenreAsync(string genre)
+        {
+            try
+            {
+                var result = await _ADOuow._booklistRepository.GetByGenreAsync(genre);
+                _ADOuow.Commit();
+
+                if (result == null || !result.Any())
+                {
+                    return NotFound($"Книги за жанром {genre} не знайдено");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Помилка серверу: {ex.Message}");
+            }
+        }
+
     }
 }

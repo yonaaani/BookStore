@@ -14,8 +14,10 @@ namespace Dapper_Example.DAL
         public bool OnHeart { get; set; }
 
         public int IDAuthor { get; set; }
+        public Author Author { get; set; }
         public int IDUser { get; set; }
+        public Users Users { get; set; }
 
-
+        public virtual ICollection<BooksAndGifts> BooksAndGifts { get; set; }
     }
 }

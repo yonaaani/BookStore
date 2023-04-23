@@ -10,5 +10,8 @@ using MyEventsAdoNetDB.Repositories.Contracts;
 namespace MyEventsAdoNetDb.Repositories.Contracts
 {
     public interface IBookListRepository : IGenericRepository<BookList>
-    { }
+    {
+        Task<IEnumerable<BookList>> GetByAuthorAsync(string authorName);
+        Task<IEnumerable<BookList>> GetByGenreAsync(string genre);
+    }
 }

@@ -8,5 +8,7 @@
         Task<int> AddRangeAsync(IEnumerable<T> list);
         Task ReplaceAsync(T t);
         Task<int> AddAsync(T t);
+        Task<int> UpdateAsync(T entity);
+        Task<int> SaveChangesAsync();
     }
 }

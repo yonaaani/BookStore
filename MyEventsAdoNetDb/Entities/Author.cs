@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper_Example.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,7 @@ namespace MyEventsAdoNetDb.Entities
         public int IDBook { get; set; }
         public string AuthorName { get; set; }
         public string AboutTheAuthor { get; set; }
+
+        public virtual ICollection<BookList> BookList { get; set; }
     }
 }
