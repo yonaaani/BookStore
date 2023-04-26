@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookListWebApi", "MyEvent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookList.Console", "MyEvents.Console\MyBookList.Console.csproj", "{DC1E4166-D6FD-4803-BA66-551C7C87A076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookListBLL", "MyBookListBLL\MyBookListBLL.csproj", "{36946FDA-45D8-4C55-92A8-54722F52D9D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookListBLL", "MyBookListBLL\MyBookListBLL.csproj", "{36946FDA-45D8-4C55-92A8-54722F52D9D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookListEntityFrameworkDataAccessLayer", "BookListEntityFrameworkDataAccessLayer\BookListEntityFrameworkDataAccessLayer.csproj", "{36031E8E-2288-4773-99DF-9C3E5A6D9025}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{36946FDA-45D8-4C55-92A8-54722F52D9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36946FDA-45D8-4C55-92A8-54722F52D9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36946FDA-45D8-4C55-92A8-54722F52D9D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36031E8E-2288-4773-99DF-9C3E5A6D9025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36031E8E-2288-4773-99DF-9C3E5A6D9025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36031E8E-2288-4773-99DF-9C3E5A6D9025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36031E8E-2288-4773-99DF-9C3E5A6D9025}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
