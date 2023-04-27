@@ -6,8 +6,19 @@ namespace BookListEntityFrameworkDataAccessLayer.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class EventOthers
+    [Table("EventOthers")]
+    public class EventOthers
     {
+        public EventOthers()
+        {
+
+        }
+
+        public EventOthers(string otherName, string discription)
+        {
+           this.OtherName = otherName;
+           this.Discription = discription;
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDOther { get; set; }

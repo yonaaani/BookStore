@@ -6,8 +6,19 @@ namespace BookListEntityFrameworkDataAccessLayer.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class EventDiscounts
+    [Table("EventDiscounts")]
+    public class EventDiscounts
     {
+        public EventDiscounts()
+        {
+
+        }
+
+        public EventDiscounts(double discountPercentage)
+        {
+            this.DiscountPercentage = discountPercentage;
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDDiscount { get; set; }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BookListEntityFrameworkDataAccessLayer
 {
-    public class Class1
+    public class Configuration
     {
+        public const string ConnectionString = @"Data Source=DESKTOP-AOKJEDU\SQLEXPRESS;Database=Project_BookStore;Integrated Security=true;";
     }
 }

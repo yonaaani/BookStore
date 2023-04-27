@@ -6,8 +6,20 @@ namespace BookListEntityFrameworkDataAccessLayer.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class EventFilms
+    [Table("EventFilms")]
+    public class EventFilms
     {
+        public EventFilms()
+        {
+
+        }
+
+        public EventFilms(string filmName, string information)
+        {
+            this.FilmName = filmName;
+            this.Information = information;
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDFilm { get; set; }

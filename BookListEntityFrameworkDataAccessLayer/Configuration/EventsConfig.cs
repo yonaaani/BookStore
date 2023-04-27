@@ -1,22 +1,25 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using BookListEntityFrameworkDataAccessLayer.Entities;
-using System.Data.Entity.ModelConfiguration;
 
-namespace BookListEntityFrameworkDataAccessLayer.EntityConfigurations
+namespace BookListEntityFrameworkDataAccessLayer.EntityConfiguration
 {
     public class EventsConfig : IEntityTypeConfiguration<Events>
     {
         public void Configure(EntityTypeBuilder<Events> builder)
         {
             builder.HasKey(e => e.IDEvent);
+
             builder.Property(e => e.EventName)
-           .IsRequired()
-           .IsUnicode(false);
+                 .HasMaxLength(25);
+
+            builder.Property(e => e.EventDate)
+                   .IsRequired(true)
+                .HasColumnType("DateTime");
 
             builder.Property(e => e.EventText)
-            .IsRequired()
-            .HasMaxLength(50);
+                .HasMaxLength(255);
+
         }
     }
 }
