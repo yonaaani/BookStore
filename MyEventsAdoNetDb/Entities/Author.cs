@@ -1,14 +1,22 @@
 ﻿using Dapper_Example.DAL;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyEventsAdoNetDb.Entities
 {
-    public class Author : BaseEntity
+    public class Author
     {
+        public Author()
+        {
+
+        }
+
+        public Author(int idBook, string authorName, string aboutTheAuthor)
+        {
+            this.IDBook = idBook;
+            this.AuthorName = authorName;
+            this.AboutTheAuthor = aboutTheAuthor;
+        }
+
         public int IDBook { get; set; }
         public string AuthorName { get; set; }
         public string AboutTheAuthor { get; set; }
