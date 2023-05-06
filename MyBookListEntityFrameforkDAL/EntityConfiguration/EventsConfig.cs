@@ -17,7 +17,7 @@ namespace MyBookListEntityFrameworkDAL.EntityConfiguration
 
             builder.Property(e => e.EventText)
                 .HasMaxLength(255);
-
+            
         }
     }
 }

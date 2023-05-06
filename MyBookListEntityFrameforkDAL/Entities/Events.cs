@@ -3,9 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
 using Dapper_Example.DAL;
 using MyEventsAdoNetDb.Entities;
+using Microsoft.EntityFrameworkCore;
+using MyBookListEntityFrameworkDAL.EntityConfiguration;
 
 namespace MyBookListEntityFrameforkDAL.Entities
 {
+    [EntityTypeConfiguration(typeof(EventsConfig))]
     [Table("Events")]
     public class Events
     {
@@ -37,11 +40,16 @@ namespace MyBookListEntityFrameforkDAL.Entities
         [Required]
         [ForeignKey("BookList")]
         public int? IDBook { get; set; }
-        public BookList bookList { get; set; }
+        public BookList BookList { get; set; }
 
         [Required]
         [ForeignKey("Users")]
         public int? IDUser { get; set; }
-        public Users users { get; set; }
+        public Users Users { get; set; }
+
+        public virtual ICollection<EventOthers> EventOthers { get; set; }
+        public virtual ICollection<EventNewBooks> EventNewBooks { get; set; }
+        public virtual ICollection<EventFilms> EventFilms { get; set; }
+        public virtual ICollection<EventDiscounts> EventDiscounts { get; set; }
     }
 }

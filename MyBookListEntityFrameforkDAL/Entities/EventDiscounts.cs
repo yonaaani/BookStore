@@ -1,9 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using MyBookListEntityFrameworkDAL.EntityConfigurations;
 
 namespace MyBookListEntityFrameforkDAL.Entities
 {
+    [EntityTypeConfiguration(typeof(EventDiscountsConfig))]
     [Table("EventDiscounts")]
     public class EventDiscounts
     {
@@ -24,5 +27,7 @@ namespace MyBookListEntityFrameforkDAL.Entities
         public double? DiscountPercentage { get; set; }
 
         public int? IDEvent { get; set; }
+
+        public virtual ICollection<Events> Events { get; set; }
     }
 }

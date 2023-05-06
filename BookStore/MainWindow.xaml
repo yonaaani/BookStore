@@ -48,7 +48,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown" Text="Password" Grid.Column="1" FontFamily="Segoe UI" Margin="0,1,0,0" Foreground="#7F3C3C43" Height="16" FontSize="11"/>
-                        <PasswordBox x:Name="txtPassword" PasswordChanged="txtParrword_TextChanged" Margin="17,6,0,6" Background="Transparent" BorderBrush="#00ABADB3" Grid.ColumnSpan="2" SelectionBrush="#000078D7" FontFamily="Segoe UI" FontSize="11" Foreground="#7F3C3C43"/>
+                        <PasswordBox x:Name="txtPassword" PasswordChanged="txtPassword_TextChanged" Margin="17,6,0,6" Background="Transparent" BorderBrush="#00ABADB3" Grid.ColumnSpan="2" SelectionBrush="#000078D7" FontFamily="Segoe UI" FontSize="11" Foreground="#7F3C3C43"/>
 
                         <Image Grid.Column="2" Source="/eye.png" Width="11">
                             <Image.OpacityMask>

@@ -43,7 +43,7 @@ namespace BookStore
             txtPassword.Focus();
         }
 
-        private void txtParrword_TextChanged(object sender, TextChangedEventArgs e)
+        private void txtPassword_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!string.IsNullOrEmpty(txtPassword.Password) && txtPassword.Password.Length > 0)
             {

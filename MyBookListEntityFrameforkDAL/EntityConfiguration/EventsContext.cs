@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using MyBookListEntityFrameforkDAL;
 using MyBookListEntityFrameforkDAL.Entities;
-using MyBookListEntityFrameworkDAL.EntityConfiguration;
+using MyBookListEntityFrameforkDAL.EntityConfigurations;
+using MyBookListEntityFrameworkDAL.EntityConfigurations;
 
 
 namespace MyBookListEntityFrameworkDAL.EntityConfiguration
@@ -33,7 +34,20 @@ namespace MyBookListEntityFrameworkDAL.EntityConfiguration
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Events>().ToTable("Events");
             modelBuilder.ApplyConfiguration(new EventsConfig());
+
+            modelBuilder.Entity<EventOthers>().ToTable("EventOthers");
+            modelBuilder.ApplyConfiguration(new EventOthersConfig());
+
+            modelBuilder.Entity<EventNewBooks>().ToTable("EventNewBooks");
+            modelBuilder.ApplyConfiguration(new EventNewBooksConfig());
+
+            modelBuilder.Entity<EventFilms>().ToTable("EventFilms");
+            modelBuilder.ApplyConfiguration(new EventFilmsConfig());
+
+            modelBuilder.Entity<EventDiscounts>().ToTable("EventDiscounts");
+            modelBuilder.ApplyConfiguration(new EventDiscountsConfig());
         }
     }
 

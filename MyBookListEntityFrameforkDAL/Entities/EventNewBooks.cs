@@ -1,9 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using MyBookListEntityFrameforkDAL.EntityConfigurations;
 
 namespace MyBookListEntityFrameforkDAL.Entities
 {
+    [EntityTypeConfiguration(typeof(EventNewBooksConfig))]
     [Table("EventNewBooks")]
     public class EventNewBooks
     {
@@ -33,5 +36,7 @@ namespace MyBookListEntityFrameforkDAL.Entities
         public string Information { get; set; }
 
         public int? IDEvent { get; set; }
+
+        public virtual ICollection<Events> Events { get; set; }
     }
 }
