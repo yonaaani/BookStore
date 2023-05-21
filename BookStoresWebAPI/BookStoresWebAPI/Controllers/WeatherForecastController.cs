@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace JWTAuthentication.WebApi.Controllers
+namespace BookStoresWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]

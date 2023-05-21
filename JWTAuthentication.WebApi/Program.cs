@@ -2,28 +2,30 @@ using JWTAuthentication.WebApi.Contexts;
 using JWTAuthentication.WebApi.Models;
 using JWTAuthentication.WebApi.Services;
 using JWTAuthentication.WebApi.Settings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+
+//////////////////////////////////////////
+/// Конфігурування хоста
+//////////////////////////////////////////
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-
 //Configuration from AppSettings
-builder.Services.Configure<JWT>(_configuration.GetSection("JWT"));
+builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 
 //User Manager Service
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-
-//Adding DB Context with MSSQL
+//Adding DB Context with MS SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
-        _configuration.GetConnectionString("DefaultConnection"),
+        builder.Configuration.GetConnectionString("DefaultConnection"),
         b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-
-
 
 //Adding Athentication - JWT
 builder.Services.AddAuthentication(options =>
@@ -31,7 +33,6 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-
     .AddJwtBearer(o =>
     {
         o.RequireHttpsMetadata = false;
@@ -44,30 +45,33 @@ builder.Services.AddAuthentication(options =>
             ValidateLifetime = true,
             ClockSkew = TimeSpan.Zero,
 
-            ValidIssuer = _configuration["JWT:Issuer"],
-            ValidAudience = _configuration["JWT:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]))
+            ValidIssuer = builder.Configuration["JWT:Issuer"],
+            ValidAudience = builder.Configuration["JWT:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]))
         };
     });
 
-
-
-
-
+// Controllers
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-
+// Build
 var app = builder.Build();
 
+
+
+
+//////////////////////////////////////////
 // Configure the HTTP request pipeline.
+//////////////////////////////////////////
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    DatabaseSeed();
 }
 
 app.UseHttpsRedirection();
@@ -78,3 +82,26 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+// DataBase Seeding
+async void DatabaseSeed()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+        try
+        {
+            //Seed Default Users
+            var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            await ApplicationDbContextSeed.SeedEssentialsAsync(userManager, roleManager);
+        }
+        catch (Exception ex)
+        {
+            var logger = loggerFactory.CreateLogger<Program>();
+            logger.LogError(ex, "An error occurred seeding the DB.");
+        }
+    }
+}
