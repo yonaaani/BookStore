@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using MyBookListEntityFrameforkDAL;
 using MyBookListEntityFrameforkDAL.Entities;
-using MyBookListEntityFrameforkDAL.EntityConfigurations;
-using MyBookListEntityFrameworkDAL.EntityConfigurations;
+using MyBookListEntityFrameforkDAL.EntityConfiguration;
+using MyBookListEntityFrameworkDAL.EntityConfiguration;
 
 
-namespace MyBookListEntityFrameworkDAL.EntityConfiguration
+namespace MyBookListEntityFrameworkDAL
 {
     public class EventsContext : DbContext
     {
@@ -15,7 +15,7 @@ namespace MyBookListEntityFrameworkDAL.EntityConfiguration
         public DbSet<EventNewBooks> EventNewBooks { get; set; }
         public DbSet<EventOthers> EventOthers { get; set; }
 
-        public  EventsContext()
+        public EventsContext()
         {
 
         }

@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookList.Console", "MyEve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookListBLL", "MyBookListBLL\MyBookListBLL.csproj", "{36946FDA-45D8-4C55-92A8-54722F52D9D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookListEntityFrameforkDAL", "MyBookListEntityFrameforkDAL\MyBookListEntityFrameforkDAL.csproj", "{A189D5E3-FFCD-4DC9-852B-93BD2928085A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBookListEntityFrameworkDAL", "MyBookListEntityFrameforkDAL\MyBookListEntityFrameworkDAL.csproj", "{A189D5E3-FFCD-4DC9-852B-93BD2928085A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdoNet&Dapper", "AdoNet&Dapper", "{40B018CF-6713-4105-9361-8B70C1414343}"
 EndProject

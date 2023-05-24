@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MyBookListEntityFrameforkDAL.Entities;
 
-namespace MyBookListEntityFrameworkDAL.EntityConfigurations
+namespace MyBookListEntityFrameworkDAL.EntityConfiguration
 {
     public class EventFilmsConfig : IEntityTypeConfiguration<EventFilms>
     {

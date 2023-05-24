@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MyBookListEntityFrameforkDAL.Entities;
 
-namespace MyBookListEntityFrameforkDAL.EntityConfigurations
+namespace MyBookListEntityFrameforkDAL.EntityConfiguration
 {
     public class EventNewBooksConfig : IEntityTypeConfiguration<EventNewBooks>
     {

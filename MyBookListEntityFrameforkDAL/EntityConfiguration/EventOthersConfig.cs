@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MyBookListEntityFrameforkDAL.Entities;
 
-namespace MyBookListEntityFrameworkDAL.EntityConfigurations
+namespace MyBookListEntityFrameworkDAL.EntityConfiguration
 {
     public class EventOthersConfig : IEntityTypeConfiguration<EventOthers>
     {
@@ -16,7 +16,7 @@ namespace MyBookListEntityFrameworkDAL.EntityConfigurations
             .HasMaxLength(25);
 
             builder
-                .Property(eo => eo.Discription)
+                .Property(eo => eo.Description)
                 .HasMaxLength(255);
 
         }

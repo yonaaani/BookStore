@@ -19,6 +19,7 @@ namespace MyEventsAdoNetDb.Entities
             this.Password = password;
         }
 
+        public int IDUser { get; set; }
         public string UserName { get; set; }
         public string UserNickname { get; set; }
         public string UserEmail { get; set; }
