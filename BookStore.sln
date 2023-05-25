@@ -35,6 +35,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerApp", "..\Blazo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuriousDriveRazorLibrary", "..\BlazorServerApp\CuriousDriveRazorLibrary\CuriousDriveRazorLibrary\CuriousDriveRazorLibrary.csproj", "{6081D382-BD4F-47C9-97E0-574B29E1EA54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookListEntityFrameworkBLL", "MyBookListEntityFrameworkBLL\MyBookListEntityFrameworkBLL.csproj", "{6F9E0332-7E94-44AE-A764-B906ABB28364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBookListEntityFrameworkWebAPI", "MyBookListEntityFrameworkWebAPI\MyBookListEntityFrameworkWebAPI.csproj", "{A5416A40-7C9F-4AE5-9C2B-1E3C7DBD723B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +89,14 @@ Global
 		{6081D382-BD4F-47C9-97E0-574B29E1EA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6081D382-BD4F-47C9-97E0-574B29E1EA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6081D382-BD4F-47C9-97E0-574B29E1EA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9E0332-7E94-44AE-A764-B906ABB28364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9E0332-7E94-44AE-A764-B906ABB28364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9E0332-7E94-44AE-A764-B906ABB28364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9E0332-7E94-44AE-A764-B906ABB28364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5416A40-7C9F-4AE5-9C2B-1E3C7DBD723B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5416A40-7C9F-4AE5-9C2B-1E3C7DBD723B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5416A40-7C9F-4AE5-9C2B-1E3C7DBD723B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5416A40-7C9F-4AE5-9C2B-1E3C7DBD723B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +113,8 @@ Global
 		{E15950BD-7A82-4B36-B5E4-2CC8C1835D2C} = {46EC6BF9-F5CE-450D-978D-E7CC450E93A5}
 		{D401A0E5-09B1-4DEB-B980-E1F8870A345F} = {846668B4-5753-4CC0-A871-EE26CCE9C2B7}
 		{6081D382-BD4F-47C9-97E0-574B29E1EA54} = {846668B4-5753-4CC0-A871-EE26CCE9C2B7}
+		{6F9E0332-7E94-44AE-A764-B906ABB28364} = {6F3938C2-E881-424B-96C6-8130287FE0FF}
+		{A5416A40-7C9F-4AE5-9C2B-1E3C7DBD723B} = {6F3938C2-E881-424B-96C6-8130287FE0FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C94FA78F-2D1F-4786-B145-78F8B2E93D1B}

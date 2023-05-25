@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
-using MyBookListEntityFrameforkDAL.EntityConfigurations;
-using MyBookListEntityFrameworkDAL.EntityConfigurations;
+using MyBookListEntityFrameforkDAL.EntityConfiguration;
+using MyBookListEntityFrameworkDAL.EntityConfiguration;
 
 namespace MyBookListEntityFrameforkDAL.Entities
 {
