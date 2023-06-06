@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediatR;
-using Domain.Queries;
+using Application.Queries;
 using Domain.Models;
 using Domain.DataAccess;
 
-namespace Domain.Handlers
+namespace Application.Handlers
 {
     public class GetOrderListHandler : IRequestHandler<GetOrderListQuery, List<Order>>
     {

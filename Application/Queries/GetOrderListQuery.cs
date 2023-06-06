@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Domain.Models;
 using MediatR;
 
-namespace Domain.Queries
+namespace Application.Queries
 {
     public record GetOrderListQuery() : IRequest<List<Order>>;
   
