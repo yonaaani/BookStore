@@ -1,0 +1,76 @@
+﻿@page  "/signup"
+@using BlazorServerApp.Data
+@using BlazorServerApp.Services
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject Blazored.LocalStorage.ILocalStorageService localStorageService
+@inject IUserService userService
+
+<LoadingScreen>
+    <EditForm Model="@user" OnValidSubmit="@RegisterUser">
+        <div>
+            <br /><br />
+        </div>
+        <div>
+            <br />
+        </div>
+    <div class="row-4">
+        <input class="form-control col-12" @bind="user.EmailAddress" placeholder="email address" />
+        </div>
+        <br />
+    <div class="row-4">
+            <input type="password" class="form-control col-12" @bind="user.Password" placeholder="password" />
+        </div>
+        <br />
+    <div class="row-4">
+            <input type="password" class="form-control col-12" @bind="user.ConfirmPassword" placeholder="confirm password" />
+        </div>
+        <br />
+    <div class="row-4">
+            <input type="submit" class="form-control col-6 btn btn-primary" value="Create Account" />
+    </div>
+    <div>
+        <br />
+    </div>
+    <div>
+        <a style="color: #8E8E93">Already have an account?</a>
+        <a style="font-weight: bold" href="/" class="col-6">Log in here</a>
+    </div>
+        <br />
+    <div class="row-4" style="text-align:left; font-weight:bold">
+            <span class="col-12">@LoginMesssage</span>
+        </div>
+    </EditForm>
+    </LoadingScreen>
+
+@code {
+
+    private User user;
+    public string LoginMesssage { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        user = new User();
+        return base.OnInitializedAsync();
+    }
+
+    private async Task<bool> RegisterUser()
+    {
+        //assume that user is valid
+        user.Source = "APPC";
+        var returnedUser = await userService.RegisterUserAsync(user);
+
+        if(returnedUser.EmailAddress != null)
+        {   
+            ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated(returnedUser);
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            LoginMesssage = "Invalid username or password";
+        }        
+        
+        return await Task.FromResult(true);
+    }
+
+}
