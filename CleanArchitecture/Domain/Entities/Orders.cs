@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Order : BaseEntity
+    public class Orders : BaseEntity
     {
-        public int IDOrder { get; set; }
         public string OrderName { get; set; } = default!;
 
+        public Orders(int id, string orderName)
+        {
+            Id = id;
+            OrderName = orderName;
+        }
     }
 }

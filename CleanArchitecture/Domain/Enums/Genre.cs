@@ -1,0 +1,29 @@
+﻿namespace Domain.Enums
+{
+    public enum Genre
+    {
+        Fantasy,
+        Adventure,
+        Romance,
+        Contemporary,
+        Dystopian,
+        Mystery,
+        Horror,
+        Thriller,
+        Paranormal,
+        Historical,
+        Science,
+        Children,
+        Memoir,
+        Cookbook,
+        Art,
+        SelfHelp,
+        Development,
+        Motivational,
+        Health,
+        Travel,
+        Guide,
+        Relationships,
+        Humor
+    }
+}
