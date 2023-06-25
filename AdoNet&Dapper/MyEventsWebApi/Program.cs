@@ -30,6 +30,8 @@ builder.Services.AddScoped<IDbTransaction>(s =>
     conn.Open();
     return conn.BeginTransaction();
 });
+
+
 //Connection for EF database + DbContext
 //builder.Services.AddDbContext<MyEventsDbContext>(options =>
 //{

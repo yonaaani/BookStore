@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\AdoNet&amp;Dapper\MyEventsAdoNetDb\MyBookListAdoNetDb.csproj" />
+    <ProjectReference Include="..\..\AdoNet&amp;Dapper\MyEventsWebApi\MyBookListWebApi.csproj" />
     <ProjectReference Include="..\MyEventsAdoNetDb\MyBookListAdoNetDb.csproj" />
   </ItemGroup>
 
