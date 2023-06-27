@@ -19,6 +19,5 @@ namespace Persistence.Contexts
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-
     }
 }
