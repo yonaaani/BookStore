@@ -13,62 +13,36 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookStore
+namespace MainPage.MVVM.View
 {
-    public partial class MainWindow : Window
+    public partial class LoginView : Window
     {
-        public MainWindow()
+        public LoginView()
         {
             InitializeComponent();
         }
 
-        private void textUsername_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            txtUsername.Focus();
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
 
-        private void txtUsername_TextChanged(object sender, TextChangedEventArgs e)
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtUsername.Text) && txtUsername.Text.Length > 0)
-            {
-                textUsername.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                textUsername.Visibility = Visibility.Visible;
-            }
-        }
-        private void textPassword_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            txtPassword.Focus();
+            WindowState = WindowState.Minimized;
         }
 
-        private void txtPassword_TextChanged(object sender, TextChangedEventArgs e)
+        private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtPassword.Password) && txtPassword.Password.Length > 0)
-            {
-                textPassword.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                textPassword.Visibility = Visibility.Visible;
-            }
+            Application.Current.Shutdown();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if(!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Password))
-            {
-                MessageBox.Show("Successufully Logined in");
-            }
-        }
+        private void btnLogin_Click(object sender, RoutedEventArgs e) { }
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MyGotFocus(object sender, RoutedEventArgs e)
         {
-            if(e.ChangedButton == MouseButton.Left)
-            {
-                this.DragMove();
-            }
+            txtUser.Background = Brushes.White;
         }
     }
 }

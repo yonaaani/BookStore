@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainPage.MVVM.ViewModel
 {
-    class AboutViewModel
+    public class AboutViewModel : ViewModelBase
     {
     }
 }
