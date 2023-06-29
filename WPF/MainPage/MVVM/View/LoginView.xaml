@@ -19,6 +19,17 @@
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+        <Style x:Key="NoHighlightButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources> 
 
     <Window.Visibility>
@@ -81,11 +92,9 @@
                                  GotFocus="MyGotFocus"
                                  FontWeight="Medium"/>
 
-                            <Image Grid.Column="2" Source="/Images/cancelll.png" Width="10">
-                                <Image.OpacityMask>
-                                    <ImageBrush ImageSource="/Images/cancelll.png" Stretch="Uniform" TileMode="None"/>
-                                </Image.OpacityMask>
-                            </Image>
+                            <Button x:Name="btnClear" Grid.Column="2" Click="btnClear_Click" Margin="0,0,7,0" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent" BorderBrush="White" Style="{StaticResource NoHighlightButtonStyle}">
+                                <Image Source="/Images/cancelll.png" Width="10" />
+                            </Button>
                         </Grid>
                     </Border>
                     <Border BorderBrush="#BF8E8E93" BorderThickness="1" Height="30" Width="170" Margin="0,10,0,0" CornerRadius="6,6,6,6">

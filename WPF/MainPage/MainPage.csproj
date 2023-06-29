@@ -74,12 +74,32 @@
     <Compile Include="MVVM\Model\Contracts\IBookImagesRepository.cs" />
     <Compile Include="MVVM\Model\Contracts\IBooksRepository.cs" />
     <Compile Include="MVVM\Model\UserAccountModel.cs" />
+    <Compile Include="MVVM\ViewModel\BooksByTheFootViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\EventsViewModel.cs" />
+    <Compile Include="MVVM\View\BooksByTheFootView.xaml.cs">
+      <DependentUpon>BooksByTheFootView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EventsView.xaml.cs">
+      <DependentUpon>EventsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\BookImagesRepository.cs" />
     <Compile Include="Repositories\BooksRepository.cs" />
     <Compile Include="Repositories\Manager\ModelsManager.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Page Include="CustomControls\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ButtonWithoutLight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\BooksByTheFootView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\EventsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,6 +172,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Images\map.png" />
+    <Resource Include="Images\tree.png" />
+    <Resource Include="Images\gigantTree.jpg" />
+    <Resource Include="Images\heart.png" />
+    <Resource Include="Images\read.png" />
+    <Resource Include="Images\2phone2.png" />
+    <Resource Include="Images\1phone1.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -117,5 +117,8 @@ namespace MainPage.MVVM.ViewModel
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
+

@@ -44,5 +44,11 @@ namespace MainPage.MVVM.View
         {
             txtUser.Background = Brushes.White;
         }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtUser.Text = ""; // Очищення значення txtUser
+        }
+
     }
 }

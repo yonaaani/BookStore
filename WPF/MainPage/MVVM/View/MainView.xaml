@@ -25,6 +25,14 @@
         <DataTemplate DataType="{x:Type viewModel:AboutViewModel}">
             <local:AboutView></local:AboutView>
         </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewModel:BooksByTheFootViewModel}">
+            <local:BooksByTheFootView></local:BooksByTheFootView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:EventsViewModel}">
+            <local:EventsView></local:EventsView>
+        </DataTemplate>
     </Window.Resources>
 
     <Grid>
@@ -46,7 +54,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition Width="90"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
@@ -83,12 +91,16 @@
                              Height="40"
                              Foreground="#D8FFFFFF"
                              FontSize="12"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="False"
+                             Command="{Binding ShowBooksByTheFootViewCommand}"  />
                     <RadioButton Content="Events"
                              Height="40"
                              Foreground="#D8FFFFFF"
                              FontSize="12"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="False"
+                             Command="{Binding ShowEventsViewCommand}"  />
                     <RadioButton Content="Gifts and Apparel"
                              Height="40"
                              Foreground="#D8FFFFFF"

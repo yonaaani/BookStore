@@ -75,6 +75,9 @@ namespace MainPage.MVVM.ViewModel
         public ICommand ShowHomeViewCommand { get; set; }
         public ICommand ShowAboutViewCommand { get; set; }
 
+        public ICommand ShowBooksByTheFootViewCommand { get; set; }
+        public ICommand ShowEventsViewCommand { get; set; }
+
         //public HomeViewModel HomeVM { get; set; }
         //public AboutViewModel AboutVM { get; set; }
 
@@ -111,6 +114,8 @@ namespace MainPage.MVVM.ViewModel
             //initialize commands
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowAboutViewCommand = new ViewModelCommand(ExecuteShowAboutViewCommand);
+            ShowBooksByTheFootViewCommand = new ViewModelCommand(ExecuteShowBooksByTheFootViewCommand);
+            ShowEventsViewCommand = new ViewModelCommand(ExecuteShowEventsViewCommand);
 
             //default view
             ExecuteShowHomeViewCommand(null);
@@ -129,6 +134,18 @@ namespace MainPage.MVVM.ViewModel
         {
             CurrentChildView = new HomeViewModel();
             Caption = "Home";
+        }
+
+        private void ExecuteShowBooksByTheFootViewCommand(object obj)
+        {
+            CurrentChildView = new BooksByTheFootViewModel();
+            Caption = "BooksByTheFoot";
+        }
+
+        private void ExecuteShowEventsViewCommand(object obj)
+        {
+            CurrentChildView = new EventsViewModel();
+            Caption = "Events";
         }
 
         private void LoadCurrentUserData()
